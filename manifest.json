@@ -1,0 +1,30 @@
+{
+  "name": "PullInfo",
+  "description": "Spruce up your pages with custom CSS.",
+  "version": "1.0",
+
+  "permissions": [
+    "https://web-cat.ccs.neu.edu/*",
+    "activeTab",
+    "storage"
+  ],
+
+  "options_page": "options.html",
+
+  "browser_action": { "default_icon": "wc-tamer-logo.png" },
+  "background": { "scripts": ["button.js"] },
+
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "https://web-cat.ccs.neu.edu/*"
+      ],
+      "js": [
+        "inject.js"
+      ]
+    }
+  ],
+
+  "manifest_version": 2
+}

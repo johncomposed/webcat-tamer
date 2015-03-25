@@ -1,6 +1,6 @@
 {
-  "name": "PullInfo",
-  "description": "Spruce up your pages with custom CSS.",
+  "name": "Web Cat Tamer",
+  "description": "Review your previously submitted webcat homeworks in a beautiful and convient way.",
   "version": "1.0",
 
   "permissions": [
@@ -9,10 +9,10 @@
     "storage"
   ],
 
-  "options_page": "options.html",
+  "options_page": "app/index.html",
 
   "browser_action": { "default_icon": "wc-tamer-logo.png" },
-  "background": { "scripts": ["button.js"] },
+  "background": { "scripts": ["background.js"] },
 
   
   "content_scripts": [

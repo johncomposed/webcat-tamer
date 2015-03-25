@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+<head>
+    <title>Webcat Tamer</title>
+    <link rel="stylesheet" type="text/css" href="style/base.css">
+    <link rel="stylesheet" type="text/css" href="style/code.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+<body>
+
+
+    <div id='navbar' class='col col-3' ng-controller='tamerCtrl'>
+      <h1 id='logo'>Webcat Tamer</h1>
+      <hr>
+      <span >
+        {{(hwList).length}} Review sheets
+        <a id="remove-all" class='click' ng-click='removeAll()' ng-show="hwList.length > 0">Clear all</a>
+      </span>
+      <input id="search" class='col-12' type="text" placeholder="Search...">
+      <div id='navlist'>
+        <ul id='navul'>
+          <li class='' ng-repeat="tab in hwList" ng-class="{active:isActiveTab(tab.title)}" >
+            <h3 class='nav-title'>
+               <a ng-href="#/hw/{{tab.time}}">{{tab.title}}</a>
+            </h3>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id='mainView' class='col col-9 push-3' data-ng-view ></div>
+
+    <script type="text/javascript" src="lib/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/angular/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="tamerCtrl.js"></script>
+    <script type="text/javascript" src="tamerStorage.js"></script>
+</body>
+</html>

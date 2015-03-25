@@ -1,4 +1,6 @@
 // First just add the button
+if (document.querySelector('[value="< Back to Summary"]')) {
+
 var buttonOnSite = document.querySelector('[value="< Back to Summary"]'),
     parentForm = buttonOnSite.parentElement,
     button = document.createElement("button"),
@@ -75,4 +77,5 @@ function saveCode() {
   console.log(optionsUrl);
   //button.innerHTML = ' <a target="_blank" href="' + optionsUrl + '">options page</a> ';
 
+}
 }

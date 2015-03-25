@@ -1,4 +1,4 @@
-wcTamer.service('todoStorage', function ($q) {
+wcTamer.service('tamerStorage', function ($q) {
     var storage = chrome.storage.local;
     var _this = this;
     this.data = [];
@@ -19,8 +19,8 @@ wcTamer.service('todoStorage', function ($q) {
         });
     }
 
-    this.remove = function(todo) {
-        this.data.splice(this.data.indexOf(todo), 1);
+    this.remove = function(hw) {
+        this.data.splice(this.data.indexOf(hw), 1);
         this.sync();
     }
 

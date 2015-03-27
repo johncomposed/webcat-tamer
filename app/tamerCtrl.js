@@ -54,6 +54,29 @@ wcTamer.controller('hwCtrl',
         window.print();
     }
 
+  $scope.toggleLine = function() {
+      var lines = Array.prototype.slice.call(document.querySelectorAll(".lineCount, .lineCountHilight"));
+      var commentDivs = document.querySelectorAll('tr > td:not(:last-child) > div');
+      for (var i = 0; i < commentDivs.length; i++) {
+        lines.push(commentDivs[i].parentElement);
+      }
+      for (var i = 0; i < lines.length; i++) {
+      if(lines[i].style.display == 'none') {
+         lines[i].style.display = 'table-cell';
+      } else {
+         lines[i].style.display = 'none';
+      }
+      }
+  }
+
 });
 
+wcTamer.controller('dashCtrl', function ($scope, tamerStorage) {
 
+    $scope.tamerStorage = tamerStorage;
+
+    $scope.$watch('tamerStorage.data', function() {
+        $scope.hwList = $scope.tamerStorage.data;
+    });
+
+});

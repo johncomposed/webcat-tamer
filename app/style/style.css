@@ -65,6 +65,10 @@ body {
   div#hwNav {
     display: none;
   }
+
+table, th, td {
+   border: 0px solid white;
+}
 }
 
 

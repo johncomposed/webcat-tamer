@@ -143,6 +143,8 @@ SPAN.srcFile {
 TABLE.srcView {
     font-size: 12px;
     border:    #000000 1px solid;
+    /*John's addition*/
+    width: 100%;
 }
 
 TD.lineCount {

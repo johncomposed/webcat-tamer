@@ -34,6 +34,10 @@ function getKey(key, callback) {
 function addBoxes(codeDataArr) {
   // Get all the code boxes on the page
   var boxes = document.querySelectorAll('div.expboxcontent'),
+      totalScore = document.querySelectorAll('table>tbody>tr>td')[4].innerHTML,
+      designScore = document.querySelectorAll('table>tbody>tr>td')[6].innerHTML,
+      styleScore = document.querySelectorAll('table>tbody>tr>td')[9].innerHTML,
+      testScore = document.querySelectorAll('table>tbody>tr>td')[13].innerHTML,
       codeTitles = document.querySelectorAll('h2.collapsible');
 
   for (i = 0, l = boxes.length; i < l; i++) {
@@ -43,6 +47,10 @@ function addBoxes(codeDataArr) {
     // I should add time (for id) and submit time for sorting
     var codeobj = {
       title: title,
+      totalScore: totalScore,
+      designScore: designScore,
+      styleScore: styleScore,
+      testScore: testScore,
       content: code,
       time: time
     };

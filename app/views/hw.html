@@ -2,9 +2,10 @@
       <div class='row clear'>
         <h2 id='title'>{{currentTab.title}}</h2>
         <div id="hwNav">
+          <a id='togglelines' class='click' ng-click='toggleLine()'> toggle Lines </a>
           <a id='print' class='click' ng-click='print()'> Print </a>
           <a id='remove' class='click' ng-click='remove(currentTab)'> Remove </a>
         </div>
       </div>
       <div id='codebox' ng-bind-html="currentTab.content | to_trusted"></div>
-</div>
+</div>  

@@ -1,0 +1,10 @@
+ <div ng-controller='dashCtrl'>
+  <a id="remove-all" class='click' ng-click='removeAll()' ng-show="hwList.length > 0">Remove all</a>
+  <div class='' ng-repeat="tab in hwList" ng-class="{active:isActiveTab(tab.title)}" >
+    <div class='nav-title'>
+      <h2 id='title'>{{tab.title}}</h2>
+    </div>
+    <div id='codebox' ng-bind-html="tab.content | to_trusted"></div>
+  </div>
+</div>
+

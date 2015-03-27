@@ -1,0 +1,9 @@
+ <div ng-controller='dashCtrl'>
+  <div class='' ng-repeat="tab in hwList" ng-class="{active:isActiveTab(tab.title)}" >
+    <div class='nav-title'>
+      <h3>{{tab.title}}</h3>
+      <h5>{{tab.totalScore}}</h5>
+    </div>
+  </div>
+</div>
+

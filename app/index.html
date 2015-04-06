@@ -2,36 +2,38 @@
 <html ng-app='app'>
 <head>
     <title>Webcat Tamer</title>
-    <link rel="stylesheet" type="text/css" href="style/base.css">
+    <link rel="stylesheet" type="text/css" href="style/email.css">
     <link rel="stylesheet" type="text/css" href="style/code.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+    <main class="main" role="main">
+      <div class="flex">
 
-
-    <div id='navbar' class='col col-3' ng-controller='tamerCtrl'>
-      <h1 id='logo'><a href="/app/index.html#/">Webcat Tamer</a></h1>
-      <hr>
+    <div id='navbar' class='module inbox-view' ng-controller='tamerCtrl'>
+      <div class="module__title">
+        <h1 id='logo'>Webcat Tamer</h1>
+      </div>
       <span >
-        {{(hwList).length}} Review sheets
+        <a href="/app/index.html#/">Dashboard </a>
         <a id="view-all" class='click' href="/app/index.html#/all/" ng-show="hwList.length > 0">View All</a>
       </span>
-      <input id="search" class='col-12' type="text" ng-model="searchString" placeholder="Search...">
+      <input id="search" class='inbox__search' type="text" ng-model="searchString" placeholder="Search...">
       <div id='navlist'>
         <ul id='navul'>
-          <li class='' ng-repeat="tab in hwList | searchFor:searchString" ng-class="{active:isActiveTab(tab.title)}" >
-            <h3 class='nav-title'>
-               <a ng-href="#/hw/{{tab.time}}">{{tab.title}}</a>
-            </h3>
+          <li ng-repeat="tab in hwList | searchFor:searchString" ng-class="{active:isActiveTab(tab.title)}" >
+            <a ng-href="#/hw/{{tab.time}}">{{tab.title}}</a>
           </li>
         </ul>
       </div>
     </div>
 
-    <div id='mainView' class='col col-9 push-3'>
+    <div id='mainView' class='module directive'>
       <data-ng-view></data-ng-view>
     </div>
-
+</div>
+</main>
     <script type="text/javascript" src="lib/angular/angular.js"></script>
     <script type="text/javascript" src="lib/angular/angular-route.min.js"></script>
     <script type="text/javascript" src="app.js"></script>

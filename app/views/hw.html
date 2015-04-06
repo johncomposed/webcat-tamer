@@ -1,11 +1,31 @@
-<div  ng-controller='hwCtrl'>
-      <div class='row clear'>
-        <h2 id='title'>{{currentTab.title}}</h2>
-        <div id="hwNav">
-          <a id='togglelines' class='click' ng-click='toggleLine()'> toggle Lines </a>
-          <a id='print' class='click' ng-click='print()'> Print </a>
-          <a id='remove' class='click' ng-click='remove(currentTab)'> Remove </a>
-        </div>
-      </div>
-      <div id='codebox' ng-bind-html="currentTab.content | to_trusted"></div>
-</div>  
+<div class="email" ng-controller='hwCtrl'>
+  <div class="email__info">
+    <h2 id='title'>{{currentTab.title}}</h2>
+    <table class="gradebox noprint">
+      <tbody>
+        <tr class="o">
+          <td>Design/Readability:</td>
+          <td ng-bind-html="currentTab.designScore | to_trusted"></td>
+        </tr>
+        <tr class="e">
+          <td>Style/Coding:</td>
+          <td ng-bind-html="currentTab.styleScore | to_trusted"></td>
+        </tr>
+        <tr class="o">
+          <td>Correctness/Testing:</td>
+          <td ng-bind-html="currentTab.testScore | to_trusted"></td>
+        </tr>
+        <tr class="e">
+          <td>Final score:</td>
+          <td ng-bind-html="currentTab.totalScore | to_trusted"></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="noprint">
+      <a id='togglelines' class='click email__reply' ng-click='toggleLine()'> toggle Lines </a>
+      <a id='print' class='click email__reply' ng-click='print()'> Print </a>
+      <a id='remove' class='click email__reply danger' ng-click='remove(currentTab)'> Remove </a>
+    </div>
+  </div>
+  <div id='codebox' ng-bind-html="currentTab.content | to_trusted"></div>
+</div>

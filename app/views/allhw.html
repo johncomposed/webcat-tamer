@@ -1,10 +1,14 @@
- <div ng-controller='dashCtrl'>
-  <a id="remove-all" class='click' ng-click='removeAll()' ng-show="hwList.length > 0">Remove all</a>
-  <div class='' ng-repeat="tab in hwList" ng-class="{active:isActiveTab(tab.title)}" >
+<div ng-controller='dashCtrl' class="email">
+  <div class="noprint">
+    <a id='togglelines' class='click email__reply' ng-click='toggleLine()'> Toggle Lines </a>
+    <a id='print' class='click email__reply' ng-click='print()'> Print all </a>
+    <a id='remove' class='click email__reply danger' ng-click='removeAll()'> Remove all</a>
+  </div>
+  <div class='' ng-repeat="tab in hwList" ng-class="{active:isActiveTab(tab.title)}">
     <div class='nav-title'>
       <h2 id='title'>{{tab.title}}</h2>
     </div>
     <div id='codebox' ng-bind-html="tab.content | to_trusted"></div>
   </div>
 </div>
-
+ 

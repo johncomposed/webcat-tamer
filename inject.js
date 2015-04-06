@@ -42,12 +42,18 @@ function getKey(key, callback) {
 function addBoxes(codeDataArr) {
   // Get all the code boxes on the page
   var boxes = document.querySelectorAll('div.expboxcontent'),
-      sBElement = document.querySelectorAll('table>tbody')[1],
-      designScore = sBElement.querySelectorAll('tr>td.R')[0].innerHTML,
-      styleScore = sBElement.querySelectorAll('tr>td.R')[1].innerHTML,
-      testScore = sBElement.querySelectorAll('tr>td.R')[2].innerHTML,
-      totalScore = sBElement.querySelectorAll('tr>td.R')[3].innerHTML,
-      codeTitles = document.querySelectorAll('h2.collapsible');
+      sBElement = document.querySelectorAll('table>tbody')[1];
+      
+  var designScore = sBElement.querySelectorAll('tr>td.R')[0].innerHTML,
+      styleScore = sBElement.querySelectorAll('tr>td.R')[1].innerHTML;
+  if (sBElement.querySelectorAll('tr>td.R').length > 3) {
+    var testScore = sBElement.querySelectorAll('tr>td.R')[2].innerHTML,
+        totalScore = sBElement.querySelectorAll('tr>td.R')[3].innerHTML;
+  } else {
+    var testScore = "N/A",
+        totalScore = sBElement.querySelectorAll('tr>td.R')[2].innerHTML;
+  }
+  var codeTitles = document.querySelectorAll('h2.collapsible');
 
   for (i = 0, l = boxes.length; i < l; i++) {
     var title = codeTitles[i].textContent;
